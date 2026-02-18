@@ -199,7 +199,7 @@ export default function LeadForm() {
             onChange={onChange("agree")}
             required
           />
-          Я согласен(на) на связь по пилоту и обработку данных
+          Я согласен на связь по пилоту и обработку данных
         </label>
         {errors.agree && (
           <p className="text-xs text-danger">{errors.agree}</p>

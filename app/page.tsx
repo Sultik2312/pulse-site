@@ -21,7 +21,7 @@ const faqItems = [
   },
   {
     q: "Кому видны данные?",
-    a: "Только тренеру и организатору пилота. Данные не передаются третьим лицам."
+    a: "Только тренеру и команде пилота. Данные не передаются третьим лицам."
   },
   {
     q: "Если не зайдёт?",
@@ -95,15 +95,15 @@ export default function Home() {
               <div className="mt-10 grid gap-3 text-sm text-muted sm:grid-cols-3">
                 <div className="flex items-center gap-2">
                   <span className="tag tag-green">{"\u{1F7E2} В порядке"}</span>
-                  {"\u{1F7E2} В порядке"}
+                  Стабильное состояние
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="tag tag-yellow">{"\u{1F7E1} Внимание"}</span>
-                  {"\u{1F7E1} Внимание"}
+                  Нужна проверка
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="tag tag-red">{"\u{1F534} Критично"}</span>
-                  {"\u{1F534} Критично"}
+                  Нужна реакция сегодня
                 </div>
               </div>
             </div>
@@ -155,7 +155,7 @@ export default function Home() {
                 },
                 {
                   title: "Ежедневная сводка",
-                  text: "Тренер быстро понимает: \u{1F7E2} В порядке, \u{1F7E1} Внимание или \u{1F534} Критично."
+                  text: "Сразу видно, у кого статус «В порядке», у кого — «Внимание», а где уже «Критично»."
                 },
                 {
                   title: "Ранние сигналы",
@@ -190,7 +190,7 @@ export default function Home() {
                 {
                   step: "03",
                   title: "Шаг 3",
-                  text: "Тренер получает сводку по своим клиентам: \u{1F7E2} В порядке, \u{1F7E1} Внимание или \u{1F534} Критично."
+                  text: "Тренер получает сводку по своим клиентам со статусами «В порядке», «Внимание», «Критично» и сразу видит приоритет на день."
                 }
               ].map((item) => (
                 <div key={item.step} className="card">
