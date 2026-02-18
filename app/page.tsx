@@ -94,16 +94,16 @@ export default function Home() {
               </p>
               <div className="mt-10 grid gap-3 text-sm text-muted sm:grid-cols-3">
                 <div className="flex items-center gap-2">
-                  <span className="tag tag-green">OK</span>
-                  Пульс в норме
+                  <span className="tag tag-green">{"\u{1F7E2} В порядке"}</span>
+                  {"\u{1F7E2} В порядке"}
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="tag tag-yellow">Внимание</span>
-                  Нужна проверка
+                  <span className="tag tag-yellow">{"\u{1F7E1} Внимание"}</span>
+                  {"\u{1F7E1} Внимание"}
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="tag tag-red">Сигнал</span>
-                  Нужен быстрый контакт
+                  <span className="tag tag-red">{"\u{1F534} Критично"}</span>
+                  {"\u{1F534} Критично"}
                 </div>
               </div>
             </div>
@@ -155,7 +155,7 @@ export default function Home() {
                 },
                 {
                   title: "Ежедневная сводка",
-                  text: "Тренер быстро понимает, кто в норме, а кому нужно внимание."
+                  text: "Тренер быстро понимает: \u{1F7E2} В порядке, \u{1F7E1} Внимание или \u{1F534} Критично."
                 },
                 {
                   title: "Ранние сигналы",
@@ -190,7 +190,7 @@ export default function Home() {
                 {
                   step: "03",
                   title: "Шаг 3",
-                  text: "Тренер получает сводку по своим клиентам: кто в норме, кому нужно внимание сегодня."
+                  text: "Тренер получает сводку по своим клиентам: \u{1F7E2} В порядке, \u{1F7E1} Внимание или \u{1F534} Критично."
                 }
               ].map((item) => (
                 <div key={item.step} className="card">
@@ -305,8 +305,8 @@ export default function Home() {
         <div className="container flex flex-wrap items-center justify-between gap-4 text-sm text-muted">
           <div>Pulse © {new Date().getFullYear()}</div>
           <div className="flex flex-wrap items-center gap-4">
-            <span>Telegram: @pulse_support</span>
-            <span>Email: hello@pulse.fit</span>
+            <span>Telegram: @s2312</span>
+            <span>Email: pulse.team@mail.ru</span>
             <Link href="#" className="transition hover:text-white">
               Политика
             </Link>

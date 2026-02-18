@@ -24,9 +24,9 @@ export default function TelegramMock() {
           ))}
         </div>
         <div className="flex flex-wrap gap-2 text-xs">
-          <span className="tag tag-green">OK</span>
-          <span className="tag tag-yellow">Внимание</span>
-          <span className="tag tag-red">Риск</span>
+          <span className="tag tag-green">{"\u{1F7E2} В порядке"}</span>
+          <span className="tag tag-yellow">{"\u{1F7E1} Внимание"}</span>
+          <span className="tag tag-red">{"\u{1F534} Критично"}</span>
         </div>
       </div>
     </div>
