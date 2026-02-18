@@ -233,7 +233,7 @@ export default function LeadForm() {
         type="submit"
         disabled={status === "loading"}
       >
-        {status === "loading" ? "Отправляем..." : "Отправить заявку"}
+        {status === "loading" ? "Отправляем..." : "Получить доступ"}
       </button>
     </form>
   );

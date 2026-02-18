@@ -4,32 +4,28 @@ import TelegramMock from "@/components/TelegramMock";
 
 const faqItems = [
   {
-    q: "Это заменяет программу тренировок?",
-    a: "Нет. Пульс не заменяет тренера и программу. Он дает ранний сигнал, когда клиенту нужна коррекция нагрузки или восстановления."
+    q: "Это заменяет тренера?",
+    a: "Нет. Pulse не заменяет тренера, а помогает быстрее видеть состояние клиентов и принимать решения."
   },
   {
-    q: "Сколько времени занимает?",
-    a: "Клиент отвечает ~30 секунд в день. Тренеру обычно нужно 1-3 минуты на просмотр светофора и короткую реакцию."
+    q: "Сколько времени это занимает?",
+    a: "Клиенту — около 30 секунд в день. Тренеру — обычно пару минут на просмотр сводки."
   },
   {
-    q: "Нужно ли устанавливать приложение?",
-    a: "Нет. Все ответы — прямо в Telegram, без отдельной установки."
+    q: "Нужно устанавливать приложение?",
+    a: "Нет. Всё работает внутри Telegram."
   },
   {
-    q: "Кому видны ответы?",
-    a: "Только тренеру и админу пилота. Мы не продаем и не передаем данные третьим лицам."
+    q: "Какие вопросы получает клиент?",
+    a: "4 коротких вопроса: сон, энергия, стресс, физическое самочувствие."
   },
   {
-    q: "Если клиент не отвечает?",
-    a: "Это видно в отчете, плюс настраиваются мягкие напоминания."
+    q: "Кому видны данные?",
+    a: "Только тренеру и организатору пилота. Данные не передаются третьим лицам."
   },
   {
-    q: "Можно ли на группу?",
-    a: "Да. Пульс работает и с группами — светофор показывает общую динамику и проблемы по людям."
-  },
-  {
-    q: "Есть ли медицинские обещания?",
-    a: "Нет. Пульс — инструмент наблюдения и коммуникации, без медицинских утверждений."
+    q: "Если не зайдёт?",
+    a: "Пилот можно остановить в любой момент, без обязательств."
   }
 ];
 
@@ -62,7 +58,7 @@ export default function Home() {
             </Link>
           </nav>
           <Link href="#lead" className="btn-secondary">
-            Запросить доступ
+            Получить доступ
           </Link>
         </div>
       </header>
@@ -73,23 +69,29 @@ export default function Home() {
             <div>
               <span className="badge">
                 <span className="h-2 w-2 rounded-full bg-accent shadow-glow" />
-                Закрытый пилот 14 дней
+                Закрытый пилот · 14 дней
               </span>
               <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                Рука клиента — на штанге. Твоя — на пульсе.
+                Pulse — ежедневный контроль состояния клиентов в Telegram
               </h1>
               <p className="mt-5 max-w-2xl text-base text-muted md:text-lg">
-                Автоматический мониторинг состояния клиентов в Telegram: 30 секунд в день — и ты
-                видишь светофор сигналов — и вовремя корректируешь план.
+                Клиент тратит ~30 секунд в день на 4 вопроса. Тренер получает сводку по своим
+                клиентам и сразу видит, кому сегодня нужно внимание.
+              </p>
+              <p className="mt-4 max-w-2xl text-sm text-muted">
+                Без отдельного приложения. Без таблиц вручную. Без “держать всё в голове”.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Link href="#lead" className="btn-primary">
-                  Запросить доступ
-                </Link>
-                <Link href="#how" className="btn-secondary">
-                  Как это работает
+                  Получить 2 скрина и сценарий пилота
                 </Link>
               </div>
+              <Link href="#pilot" className="mt-4 inline-block text-sm text-muted underline-offset-4 transition hover:text-white hover:underline">
+                Это бесплатно? — Да, пилот 14 дней без обязательств
+              </Link>
+              <p className="mt-3 max-w-2xl text-xs text-muted">
+                Если вам скинул ссылку коллега-тренер — оставьте контакт, я всё объясню и подключу.
+              </p>
               <div className="mt-10 grid gap-3 text-sm text-muted sm:grid-cols-3">
                 <div className="flex items-center gap-2">
                   <span className="tag tag-green">OK</span>
@@ -100,8 +102,8 @@ export default function Home() {
                   Нужна проверка
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="tag tag-red">Риск</span>
-                  Быстрое вмешательство
+                  <span className="tag tag-red">Сигнал</span>
+                  Нужен быстрый контакт
                 </div>
               </div>
             </div>
@@ -118,14 +120,14 @@ export default function Home() {
           <div className="container">
             <h2 className="section-title">Слепая зона между тренировками</h2>
             <p className="section-subtitle">
-              До следующей встречи может пройти неделя. В это время и рождаются перегрузка, срыв и
-              травмоопасность.
+              До следующей тренировки может пройти несколько дней, и в это окно часто теряется
+              контроль за состоянием клиента.
             </p>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               {[
-                "Ты не видишь, что происходит с человеком между тренировками",
-                "Никто не хочет устанавливать еще одно приложение",
-                "Срывы происходят тихо — пока не становится поздно"
+                "Между тренировками клиент может просесть, а вы узнаете об этом поздно",
+                "Ручной сбор обратной связи съедает время",
+                "Часть клиентов “теряется”, пока не случается срыв"
               ].map((text) => (
                 <div key={text} className="card">
                   <p className="text-base text-white">{text}</p>
@@ -139,26 +141,25 @@ export default function Home() {
           <div className="container">
             <h2 className="section-title">30 секунд. Без приложений.</h2>
             <p className="section-subtitle">
-              Пульс — Telegram-native система раннего мониторинга состояния клиентов. Минимум шума,
-              максимум сигнала.
+              Pulse работает внутри Telegram и показывает сигналы по состоянию без лишней рутины.
             </p>
             <div className="mt-10 grid gap-6 md:grid-cols-2">
               {[
                 {
                   title: "Telegram-native",
-                  text: "Ответы прямо в чате, где клиент уже живет каждый день."
+                  text: "Ответы прямо в чате, где клиент и так общается каждый день."
                 },
                 {
-                  title: "Светофор рисков",
-                  text: "Не нужно читать простыни — только сигналы и приоритеты."
+                  title: "Светофор сигналов",
+                  text: "Не нужно читать длинные отчеты — сразу видно приоритеты на сегодня."
                 },
                 {
-                  title: "Еженедельная сводка",
-                  text: "Кто в норме, кто проседает и где нужно вмешательство."
+                  title: "Ежедневная сводка",
+                  text: "Тренер быстро понимает, кто в норме, а кому нужно внимание."
                 },
                 {
-                  title: "Раннее предупреждение",
-                  text: "Меньше перегруза и срывов за счет своевременной корректировки."
+                  title: "Ранние сигналы",
+                  text: "Проще вовремя скорректировать план, чем разбирать последствия позже."
                 }
               ].map((item) => (
                 <div key={item.title} className="card">
@@ -178,23 +179,22 @@ export default function Home() {
               {[
                 {
                   step: "01",
-                  title: "Подключение — 2–3 минуты",
-                  text: "В профиле нажимаешь “Добавить клиента”, выбираешь стиль сообщения — и отправляешь клиенту готовый текст/ссылку."
+                  title: "Шаг 1",
+                  text: "Тренер нажимает “Добавить клиента” и отправляет клиенту готовое сообщение в Telegram (бот сам даёт текст + ссылку)."
                 },
                 {
                   step: "02",
-                  title: "Клиент отвечает кнопками",
-                  text: "Сон, стресс, энергия и самочувствие — ~30 секунд в день."
+                  title: "Шаг 2",
+                  text: "Клиент отвечает на 4 вопроса (сон, энергия, стресс, физическое самочувствие) — ~30 секунд."
                 },
                 {
                   step: "03",
-                  title: "Ты видишь светофор",
-                  text: "Красные требуют реакции — короткое сообщение решает многое."
+                  title: "Шаг 3",
+                  text: "Тренер получает сводку по своим клиентам: кто в норме, кому нужно внимание сегодня."
                 }
               ].map((item) => (
                 <div key={item.step} className="card">
-                  <div className="text-xs text-muted">Шаг {item.step}</div>
-                  <h3 className="mt-3 text-lg font-semibold text-white">{item.title}</h3>
+                  <div className="text-xs text-muted">{item.title}</div>
                   <p className="mt-3 text-sm text-muted">{item.text}</p>
                 </div>
               ))}
@@ -202,42 +202,58 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="pilot" className="section">
-          <div className="container grid gap-8 lg:grid-cols-[1fr_0.9fr]">
-            <div>
-              <h2 className="section-title">Пилот на 14 дней</h2>
-              <p className="section-subtitle">
-                Тестируем пользу на реальных клиентах. Если не заходит — спокойно останавливаемся.
-              </p>
-              <div className="mt-8 grid gap-6 md:grid-cols-2">
-                <div className="card">
-                  <h3 className="text-base font-semibold text-white">Что получает тренер</h3>
-                  <ul className="checklist mt-4 space-y-3">
-                    <li>Мониторинг состояния и рисков</li>
-                    <li>Еженедельные сводки и алерты</li>
-                    <li>Понимание, кому нужна поддержка</li>
-                  </ul>
-                </div>
-                <div className="card">
-                  <h3 className="text-base font-semibold text-white">Что нужно от тренера</h3>
-                  <ul className="checklist mt-4 space-y-3">
-                    <li>Коротко реагировать на “красные”</li>
-                    <li>Давать обратную связь по сигналам</li>
-                    <li>Поддерживать коммуникацию</li>
-                  </ul>
-                </div>
+        <section id="fit" className="section pt-0">
+          <div className="container">
+            <h2 className="section-title">Кому подходит Pulse</h2>
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              <div className="card">
+                <h3 className="text-base font-semibold text-white">Подходит</h3>
+                <ul className="checklist mt-4 space-y-3">
+                  <li>Онлайн-тренерам и тренерам с онлайн-сопровождением</li>
+                  <li>Тем, кто ведёт несколько клиентов и не хочет терять контроль</li>
+                  <li>Тем, кому важна регулярная обратная связь без лишней рутины</li>
+                </ul>
+              </div>
+              <div className="card">
+                <h3 className="text-base font-semibold text-white">Не подходит</h3>
+                <ul className="checklist mt-4 space-y-3">
+                  <li>Если вы работаете только офлайн без сопровождения</li>
+                  <li>Если не планируете регулярно смотреть сигналы по клиентам</li>
+                  <li>Если вам комфортно всё вести вручную в чатах/таблицах</li>
+                </ul>
               </div>
             </div>
-            <div className="card">
-              <h3 className="text-lg font-semibold text-white">Что делаю я</h3>
-              <p className="mt-3 text-sm text-muted">
-                Ежедневно смотрю качество ответов, тексты и напоминания. Улучшаю механику, чтобы
-                сигналы были точными, а ответы — стабильными.
-              </p>
-              <div className="mt-6 rounded-2xl border border-border/70 bg-black/40 p-5">
-                <div className="text-xs text-muted">Условие пилота</div>
-                <p className="mt-2 text-sm text-white">
-                  Если не видим пользы — останавливаем пилот, без обязательств.
+          </div>
+        </section>
+
+        <section id="pilot" className="section">
+          <div className="container">
+            <h2 className="section-title">Пилот на 14 дней</h2>
+            <p className="section-subtitle">
+              Проверяем пользу в реальной работе тренера и смотрим, как меняется контроль за клиентами.
+            </p>
+            <div className="mt-8 grid gap-6 md:grid-cols-3">
+              <div className="card">
+                <h3 className="text-base font-semibold text-white">Что получает тренер</h3>
+                <ul className="checklist mt-4 space-y-3">
+                  <li>Ежедневную сводку по своим клиентам</li>
+                  <li>Ранние сигналы, где возможен срыв</li>
+                  <li>Понимание, кому писать сегодня в первую очередь</li>
+                </ul>
+              </div>
+              <div className="card">
+                <h3 className="text-base font-semibold text-white">Что нужно от тренера</h3>
+                <ul className="checklist mt-4 space-y-3">
+                  <li>Добавить 3-10 клиентов в пилот</li>
+                  <li>Реагировать на сигналы (коротким сообщением клиенту)</li>
+                  <li>Дать честный фидбэк по итогам пилота</li>
+                </ul>
+              </div>
+              <div className="card">
+                <h3 className="text-base font-semibold text-white">Что дальше</h3>
+                <p className="mt-4 text-sm text-muted">
+                  Оставляете заявку → получаете 2 скрина и короткую инструкцию → запускаете первых
+                  клиентов в тот же день
                 </p>
               </div>
             </div>
@@ -248,8 +264,8 @@ export default function Home() {
           <div className="container">
             <h2 className="section-title">Что проверяем в пилоте</h2>
             <p className="section-subtitle">
-              Стабильность ответов клиентов, реакцию тренера на “красные” сигналы и то, насколько
-              сводка реально экономит время и помогает корректировать план.
+              Стабильность ответов клиентов, скорость реакции тренера на сигналы и влияние ежедневной
+              сводки на качество сопровождения.
             </p>
           </div>
         </section>
@@ -257,7 +273,7 @@ export default function Home() {
         <section id="faq" className="section">
           <div className="container">
             <h2 className="section-title">FAQ</h2>
-            <p className="section-subtitle">Коротко отвечаем на самые частые вопросы.</p>
+            <p className="section-subtitle">Коротко отвечаем на частые вопросы.</p>
             <div className="mt-8 grid gap-4">
               {faqItems.map((item) => (
                 <details key={item.q} className="card group">
@@ -274,17 +290,11 @@ export default function Home() {
         <section id="lead" className="section">
           <div className="container grid gap-10 lg:grid-cols-[1fr_0.9fr]">
             <div>
-              <h2 className="section-title">Запросить доступ к пилоту</h2>
+              <h2 className="section-title">Получить доступ к пилоту</h2>
               <p className="section-subtitle">
-                Оставь контакты — напишу в течение 24 часов и подключу к пилоту.
+                Оставьте контакт — пришлю 2 скрина, короткий сценарий запуска и подключу к пилоту на
+                14 дней.
               </p>
-              <div className="mt-8 card">
-                <h3 className="text-base font-semibold text-white">Что дальше</h3>
-                <p className="mt-4 text-sm text-muted">
-                  Оставь заявку — я отвечу, подключим тебя в пилот и ты начнешь добавлять клиентов
-                  через “Добавить клиента”. Уже на следующий день увидишь сводку/светофор по группе.
-                </p>
-              </div>
             </div>
             <LeadForm />
           </div>
